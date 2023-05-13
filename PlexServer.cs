@@ -130,6 +130,19 @@ namespace PlexSharp
          }
       }
 
+      public MediaContainerHistory History()
+      {
+         using (HttpClient client = new HttpClient())
+         {
+            AddDefaultHeaders(client);
+            var result = client.GetAsync(BaseUrl + "/status/sessions/history/all").Result;
+            var responseContent = result.Content.ReadAsStringAsync().Result;
+
+            JObject o = JObject.Parse(responseContent);
+            return o.SelectToken("MediaContainer")!.ToObject<MediaContainerHistory>() ?? throw new InvalidOperationException();
+         }
+      }
+
       private void AddDefaultHeaders(HttpClient client)
       {
          client.DefaultRequestHeaders.Add("Accept", "application/json");
