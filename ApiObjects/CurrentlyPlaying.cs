@@ -19,13 +19,24 @@ namespace PlexSharp.ApiObjects
 
    public class Metadata
    {
-      public int addedAt { get; set; }
+      public int addedAt { private get; set; }
+      public DateTime AddedAt {
+         get { return Utils.ConvertEpochTime(addedAt); }
+         private set { }
+      }
+
       public string? art { get; set; }
       public double audienceRating { get; set; }
       public string? audienceRatingImage { get; set; }
       public string? chapterSource { get; set; }
       public string? contentRating { get; set; }
-      public int duration { get; set; }
+
+      public int duration { private get; set; }
+      public TimeSpan Duration {
+         get { return Utils.ConvertEpochTimeAsTimeSpan(duration); }
+         private set { }
+      }
+
       public string? guid { get; set; }
       public string? key { get; set; }
       public string? librarySectionID { get; set; }
@@ -42,7 +53,13 @@ namespace PlexSharp.ApiObjects
       public string? title { get; set; }
       public string? titleSort { get; set; }
       public string? type { get; set; }
-      public int updatedAt { get; set; }
+
+      public int updatedAt { private get; set; }
+      public DateTime UpdatedAt {
+         get { return Utils.ConvertEpochTime(updatedAt); }
+         private set { }
+      }
+
       public int viewOffset { get; set; }
       public int year { get; set; }
       public List<Media>? Media { get; set; }
@@ -66,7 +83,13 @@ namespace PlexSharp.ApiObjects
       public string? audioCodec { get; set; }
       public int bitrate { get; set; }
       public string? container { get; set; }
-      public int duration { get; set; }
+
+      public int duration { private get; set; }
+      public TimeSpan Duration {
+         get { return Utils.ConvertEpochTimeAsTimeSpan(duration); }
+         private set { }
+      }
+
       public int height { get; set; }
       public string? id { get; set; }
       public string? videoCodec { get; set; }

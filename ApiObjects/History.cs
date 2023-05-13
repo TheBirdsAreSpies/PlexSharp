@@ -21,7 +21,16 @@ namespace PlexSharp.ApiObjects
       public string? title { get; set; }
       public string? type { get; set; }
       public string? thumb { get; set; }
-      public long viewedAt { get; set; }
+      
+      [Newtonsoft.Json.JsonProperty(PropertyName = "viewedAt")]
+      public long viewedAtInternally { private get; set; }
+
+      public DateTime ViewedAt
+      {
+         get { return Utils.ConvertEpochTime(viewedAtInternally); }
+         private set { }
+      }
+
       public int accountID { get; set; }
    }
 

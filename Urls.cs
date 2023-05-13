@@ -10,6 +10,5 @@ namespace PlexSharp
    {
       public static readonly string PINS = "https://plex.tv/api/v2/pins";
       public static readonly string SIGN_IN_LEGACY = "https://plex.tv/users/sign_in.json";
-
    }
 }
