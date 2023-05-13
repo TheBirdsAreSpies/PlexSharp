@@ -25,11 +25,11 @@ namespace PlexSharp.ApiObjects
          private set { }
       }
 
-      public string? art { get; set; }
-      public double audienceRating { get; set; }
-      public string? audienceRatingImage { get; set; }
-      public string? chapterSource { get; set; }
-      public string? contentRating { get; set; }
+      public string? Art { get; set; }
+      public double AudienceRating { get; set; }
+      public string? AudienceRatingImage { get; set; }
+      public string? ChapterSource { get; set; }
+      public string? ContentRating { get; set; }
 
       public int duration { private get; set; }
       public TimeSpan Duration {
@@ -37,22 +37,22 @@ namespace PlexSharp.ApiObjects
          private set { }
       }
 
-      public string? guid { get; set; }
-      public string? key { get; set; }
-      public string? librarySectionID { get; set; }
-      public string? librarySectionKey { get; set; }
-      public string? librarySectionTitle { get; set; }
-      public string? originalTitle { get; set; }
-      public string? originallyAvailableAt { get; set; }
-      public string? ratingKey { get; set; }
-      public string? sessionKey { get; set; }
-      public string? studio { get; set; }
-      public string? summary { get; set; }
-      public string? tagline { get; set; }
-      public string? thumb { get; set; }
-      public string? title { get; set; }
-      public string? titleSort { get; set; }
-      public string? type { get; set; }
+      public string? Guid { get; set; }
+      public string? Key { get; set; }
+      public string? LibrarySectionID { get; set; }
+      public string? LibrarySectionKey { get; set; }
+      public string? LibrarySectionTitle { get; set; }
+      public string? OriginalTitle { get; set; }
+      public string? OriginallyAvailableAt { get; set; }
+      public string? RatingKey { get; set; }
+      public string? SessionKey { get; set; }
+      public string? Studio { get; set; }
+      public string? Summary { get; set; }
+      public string? Tagline { get; set; }
+      public string? Thumb { get; set; }
+      public string? Title { get; set; }
+      public string? TitleSort { get; set; }
+      public string? Type { get; set; }
 
       public int updatedAt { private get; set; }
       public DateTime UpdatedAt {
@@ -69,7 +69,7 @@ namespace PlexSharp.ApiObjects
       public List<Collection>? Collection { get; set; }
       public List<Director>? Director { get; set; }
       public List<Writer>? Writer { get; set; }
-      public List<Role>? Role { get; set; }
+      public List<RoleClass>? Role { get; set; }
       public List<Producer>? Producer { get; set; }
       public SessionUser? User { get; set; }
       public Player? Player { get; set; }
@@ -78,11 +78,11 @@ namespace PlexSharp.ApiObjects
 
    public class Media
    {
-      public string? aspectRatio { get; set; }
-      public int audioChannels { get; set; }
-      public string? audioCodec { get; set; }
-      public int bitrate { get; set; }
-      public string? container { get; set; }
+      public string? AspectRatio { get; set; }
+      public int AudioChannels { get; set; }
+      public string? AudioCodec { get; set; }
+      public int Bitrate { get; set; }
+      public string? Container { get; set; }
 
       public int duration { private get; set; }
       public TimeSpan Duration {
@@ -90,179 +90,180 @@ namespace PlexSharp.ApiObjects
          private set { }
       }
 
-      public int height { get; set; }
-      public string? id { get; set; }
-      public string? videoCodec { get; set; }
-      public string? videoFrameRate { get; set; }
-      public string? videoProfile { get; set; }
-      public string? videoResolution { get; set; }
-      public int width { get; set; }
-      public bool selected { get; set; }
+      public int Height { get; set; }
+      public string? Id { get; set; }
+      public string? VideoCodec { get; set; }
+      public string? VideoFrameRate { get; set; }
+      public string? VideoProfile { get; set; }
+      public string? VideoResolution { get; set; }
+      public int Width { get; set; }
+      public bool Selected { get; set; }
       public List<Part>? Part { get; set; }
    }
 
    public class Part
    {
-      public string? container { get; set; }
-      public int duration { get; set; }
-      public string? file { get; set; }
-      public string? hasThumbnail { get; set; }
-      public string? id { get; set; }
-      public string? key { get; set; }
-      public long size { get; set; }
-      public string? videoProfile { get; set; }
-      public string? decision { get; set; }
-      public bool selected { get; set; }
+      public string? Container { get; set; }
+      public int Duration { get; set; }
+      public string? File { get; set; }
+      public string? HasThumbnail { get; set; }
+      public string? Id { get; set; }
+      public string? Key { get; set; }
+      public long Size { get; set; }
+      public string? VideoProfile { get; set; }
+      public string? Decision { get; set; }
+      public bool Sselected { get; set; }
       public List<Stream>? Stream { get; set; }
    }
 
    public class Stream
    {
       // video
-      public int bitDepth { get; set; }
-      public int bitrate { get; set; }
-      public string? chromaLocation { get; set; }
-      public string? chromaSubsampling { get; set; }
-      public string? codec { get; set; }
-      public int codedHeight { get; set; }
-      public int codedWidth { get; set; }
-      public string? colorPrimaries { get; set; }
-      public string? colorRange { get; set; }
-      public string? colorSpace { get; set; }
-      public string? colorTrc { get; set; }
-      public bool @default { get; set; }
-      public string? displayTitle { get; set; }
-      public string? extendedDisplayTitle { get; set; }
-      public double frameRate { get; set; }
-      public int height { get; set; }
-      public string? id { get; set; }
-      public int index { get; set; }
-      public int level { get; set; }
-      public string? profile { get; set; }
-      public int refFrames { get; set; }
-      public int streamType { get; set; }
-      public int width { get; set; }
-      public string? location { get; set; }
+      public int BitDepth { get; set; }
+      public int Bitrate { get; set; }
+      public string? ChromaLocation { get; set; }
+      public string? ChromaSubsampling { get; set; }
+      public string? Codec { get; set; }
+      public int CodedHeight { get; set; }
+      public int CodedWidth { get; set; }
+      public string? ColorPrimaries { get; set; }
+      public string? ColorRange { get; set; }
+      public string? ColorSpace { get; set; }
+      public string? ColorTrc { get; set; }
+      public bool @Default { get; set; }
+      public string? DisplayTitle { get; set; }
+      public string? ExtendedDisplayTitle { get; set; }
+      public double FrameRate { get; set; }
+      public int Height { get; set; }
+      public string? Id { get; set; }
+      public int Index { get; set; }
+      public int Level { get; set; }
+      public string? Profile { get; set; }
+      public int RefFrames { get; set; }
+      public int StreamType { get; set; }
+      public int Width { get; set; }
+      public string? Location { get; set; }
 
       // audio
-      public string? audioChannelLayout { get; set; }
-      public int channels { get; set; }
-      public string? language { get; set; }
-      public string? languageCode { get; set; }
-      public string? languageTag { get; set; }
-      public int samplingRate { get; set; }
-      public bool selected { get; set; }
-      public string? title { get; set; }
+      public string? AudioChannelLayout { get; set; }
+      public int Channels { get; set; }
+      public string? Language { get; set; }
+      public string? LanguageCode { get; set; }
+      public string? LanguageTag { get; set; }
+      public int SamplingRate { get; set; }
+      public bool Selected { get; set; }
+      public string? Title { get; set; }
    }
 
 
    public class Genre
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? tag { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Tag { get; set; }
    }
 
    public class Country
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? tag { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Tag { get; set; }
    }
 
    public class Rating
    {
-      public string? count { get; set; }
-      public string? image { get; set; }
-      public string? type { get; set; }
-      public string? value { get; set; }
+      public string? Count { get; set; }
+      public string? Image { get; set; }
+      public string? Type { get; set; }
+      public string? Value { get; set; }
    }
 
    public class Collection
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? guid { get; set; }
-      public string? id { get; set; }
-      public string? summary { get; set; }
-      public string? tag { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Guid { get; set; }
+      public string? Id { get; set; }
+      public string? Summary { get; set; }
+      public string? Tag { get; set; }
    }
 
    public class Director
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? tag { get; set; }
-      public string? tagKey { get; set; }
-      public string? thumb { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Tag { get; set; }
+      public string? TagKey { get; set; }
+      public string? Thumb { get; set; }
    }
 
    public class Writer
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? tag { get; set; }
-      public string? tagKey { get; set; }
-      public string? thumb { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Tag { get; set; }
+      public string? TagKey { get; set; }
+      public string? Thumb { get; set; }
    }
 
-   public class Role
+   [Newtonsoft.Json.JsonObject(Id = "Role")]
+   public class RoleClass
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? role { get; set; }
-      public string? tag { get; set; }
-      public string? tagKey { get; set; }
-      public string? thumb { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Role { get; set; }
+      public string? Tag { get; set; }
+      public string? TagKey { get; set; }
+      public string? Thumb { get; set; }
    }
 
    public class Producer
    {
-      public string? count { get; set; }
-      public string? filter { get; set; }
-      public string? id { get; set; }
-      public string? tag { get; set; }
-      public string? tagKey { get; set; }
-      public string? thumb { get; set; }
+      public string? Count { get; set; }
+      public string? Filter { get; set; }
+      public string? Id { get; set; }
+      public string? Tag { get; set; }
+      public string? TagKey { get; set; }
+      public string? Thumb { get; set; }
    }
 
    [Newtonsoft.Json.JsonObject(Id = "User")]
    public class SessionUser
    {
-      public string? id { get; set; }
-      public string? thumb { get; set; }
-      public string? title { get; set; }
+      public string? Id { get; set; }
+      public string? Thumb { get; set; }
+      public string? Title { get; set; }
    }
 
    public class Player
    {
-      public string? address { get; set; }
-      public string? machineIdentifier { get; set; }
-      public string? model { get; set; }
-      public string? platform { get; set; }
-      public string? platformVersion { get; set; }
-      public string? product { get; set; }
-      public string? profile { get; set; }
-      public string? remotePublicAddress { get; set; }
-      public string? state { get; set; }
-      public string? title { get; set; }
-      public string? version { get; set; }
-      public bool local { get; set; }
-      public bool relayed { get; set; }
-      public bool secure { get; set; }
-      public int userID { get; set; }
+      public string? Address { get; set; }
+      public string? MachineIdentifier { get; set; }
+      public string? Model { get; set; }
+      public string? Platform { get; set; }
+      public string? PlatformVersion { get; set; }
+      public string? Product { get; set; }
+      public string? Profile { get; set; }
+      public string? RemotePublicAddress { get; set; }
+      public string? State { get; set; }
+      public string? Title { get; set; }
+      public string? Version { get; set; }
+      public bool Local { get; set; }
+      public bool Relayed { get; set; }
+      public bool Secure { get; set; }
+      public int UserID { get; set; }
    }
 
    public class Session
    {
-      public string? id { get; set; }
-      public int bandwidth { get; set; }
-      public string? location { get; set; }
+      public string? Id { get; set; }
+      public int Bandwidth { get; set; }
+      public string? Location { get; set; }
    }
 
    [Newtonsoft.Json.JsonObject(Id = "")]

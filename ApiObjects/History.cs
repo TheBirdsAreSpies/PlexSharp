@@ -14,13 +14,13 @@ namespace PlexSharp.ApiObjects
    [Newtonsoft.Json.JsonObject(Id = "Metadata")]
    public class MetadataHistory
    {
-      public string? historyKey { get; set; }
-      public string? key { get; set; }
-      public string? ratingKey { get; set; }
-      public string? librarySectionID { get; set; }
-      public string? title { get; set; }
-      public string? type { get; set; }
-      public string? thumb { get; set; }
+      public string? HistoryKey { get; set; }
+      public string? Key { get; set; }
+      public string? RatingKey { get; set; }
+      public string? LibrarySectionID { get; set; }
+      public string? Title { get; set; }
+      public string? Type { get; set; }
+      public string? Thumb { get; set; }
       
       [Newtonsoft.Json.JsonProperty(PropertyName = "viewedAt")]
       public long viewedAtInternally { private get; set; }
@@ -31,13 +31,13 @@ namespace PlexSharp.ApiObjects
          private set { }
       }
 
-      public int accountID { get; set; }
+      public int AccountID { get; set; }
    }
 
    [Newtonsoft.Json.JsonObject(Id = "MediaContainer")]
    public class MediaContainerHistory
    {
-      public int size { get; set; }
+      public int Size { get; set; }
       public List<MetadataHistory>? Metadata { get; set; }
    }
 }

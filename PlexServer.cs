@@ -89,11 +89,11 @@ namespace PlexSharp
 
                User user = o.SelectToken("user")!.ToObject<User>() ?? throw new InvalidOperationException();
 
-               if (null == user.authToken)
+               if (null == user.AuthToken)
                {
                   throw new LoginException("Auth token not found.");
                }
-               _authToken = user.authToken;
+               _authToken = user.AuthToken;
                IsAuthenticated = true;
             }
          }

@@ -8,39 +8,42 @@ namespace PlexSharp.ApiObjects
 {
    public class LegacyLogin
    {
-      public User? user { get; set; } = null;
+      public User? User { get; set; } = null;
    }
 
    public class User
    {
-      public int id { get; set; }
-      public string? uuid { get; set; }
-      public string? email { get; set; }
-      public DateTime joined_at { get; set; }
-      public string? username { get; set; }
-      public string? title { get; set; }
-      public string? thumb { get; set; }
-      public bool hasPassword { get; set; }
-      public string? authToken { get; set; }
-      public string? authentication_token { get; set; }
-      public Subscription? subscription { get; set; }
-      public Roles? roles { get; set; }
-      public string[]? entitlements { get; set; }
-      public DateTime confirmedAt { get; set; }
-      public object? forumId { get; set; }
-      public bool rememberMe { get; set; }
+      public int Id { get; set; }
+      public string? Uuid { get; set; }
+      public string? Email { get; set; }
+      [Newtonsoft.Json.JsonProperty(PropertyName = "joined_at")]
+      public DateTime JoinedAt { get; set; }
+      public string? Username { get; set; }
+      public string? Title { get; set; }
+      public string? Thumb { get; set; }
+      public bool HasPassword { get; set; }
+      public string? AuthToken { get; set; }
+      [Newtonsoft.Json.JsonProperty(PropertyName = "authentication_token")]
+      public string? AuthenticationToken { get; set; }
+      public Subscription? Subscription { get; set; }
+      public RolesClass? Roles { get; set; }
+      public string[]? Entitlements { get; set; }
+      public DateTime ConfirmedAt { get; set; }
+      public object? ForumId { get; set; }
+      public bool RememberMe { get; set; }
    }
 
    public class Subscription
    {
-      public bool active { get; set; }
-      public string? status { get; set; }
-      public string? plan { get; set; }
-      public string[]? features { get; set; }
+      public bool Active { get; set; }
+      public string? Status { get; set; }
+      public string? Plan { get; set; }
+      public string[]? Features { get; set; }
    }
 
-   public class Roles
+   [Newtonsoft.Json.JsonObject(Id = "Roles")]
+   public class RolesClass
    {
-      public string[]? roles { get; set; }
+      public string[]? Roles { get; set; }
    }
 }
