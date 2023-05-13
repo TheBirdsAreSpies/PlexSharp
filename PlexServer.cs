@@ -119,27 +119,32 @@ namespace PlexSharp
 
       public MediaContainer CurrentlyPlaying()
       {
-         using (HttpClient client = new HttpClient())
-         {
-            AddDefaultHeaders(client);
-            var result = client.GetAsync(BaseUrl + "/status/sessions").Result;
-            var responseContent = result.Content.ReadAsStringAsync().Result;
-
-            JObject o = JObject.Parse(responseContent);
-            return o.SelectToken("MediaContainer")!.ToObject<MediaContainer>() ?? throw new InvalidOperationException();
-         }
+         var responseContent = GetJsonByUrl(BaseUrl + "/status/sessions");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<MediaContainer>() ?? throw new InvalidOperationException();
       }
 
       public MediaContainerHistory History()
       {
-         using (HttpClient client = new HttpClient())
-         {
-            AddDefaultHeaders(client);
-            var result = client.GetAsync(BaseUrl + "/status/sessions/history/all").Result;
-            var responseContent = result.Content.ReadAsStringAsync().Result;
+         var responseContent = GetJsonByUrl(BaseUrl + "/status/sessions/history/all");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<MediaContainerHistory>() ?? throw new InvalidOperationException();
+      }
 
-            JObject o = JObject.Parse(responseContent);
-            return o.SelectToken("MediaContainer")!.ToObject<MediaContainerHistory>() ?? throw new InvalidOperationException();
+      #region "Internals"
+      private HttpClient ClientWithHeaders()
+      {
+         HttpClient client = new HttpClient();
+         AddDefaultHeaders(client);
+         return client;
+      }
+
+      private string GetJsonByUrl(string url)
+      {
+         using (var client = ClientWithHeaders())
+         {
+            var result = client.GetAsync(BaseUrl + "/status/sessions/history/all").Result;
+            return result.Content.ReadAsStringAsync().Result;
          }
       }
 
@@ -155,5 +160,6 @@ namespace PlexSharp
             client.DefaultRequestHeaders.Add("X-Plex-Token", _authToken);
          }
       }
+      #endregion
    }
 }
