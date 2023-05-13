@@ -143,7 +143,7 @@ namespace PlexSharp
       {
          using (var client = ClientWithHeaders())
          {
-            var result = client.GetAsync(BaseUrl + "/status/sessions/history/all").Result;
+            var result = client.GetAsync(url).Result;
             return result.Content.ReadAsStringAsync().Result;
          }
       }
