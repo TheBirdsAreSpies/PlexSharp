@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlexSharp.ApiObjects
+namespace PlexSharp.ApiObjects.CurrentlyPlaying
 {
    // TODO implement Track tag
    // TODO implement Photo tag
    // ref https://github.com/Arcanemagus/plex-api/wiki/Current-Sessions-Status
+
+   [Newtonsoft.Json.JsonObject(Id = "")]
+   public class CurrentlyPlaying
+   {
+      public MediaContainer? MediaContainer { get; set; }
+   }
 
    public class MediaContainer
    {
@@ -264,11 +270,5 @@ namespace PlexSharp.ApiObjects
       public string? Id { get; set; }
       public int Bandwidth { get; set; }
       public string? Location { get; set; }
-   }
-
-   [Newtonsoft.Json.JsonObject(Id = "")]
-   public class CurrentlyPlaying
-   {
-      public MediaContainer? MediaContainer { get; set; }
    }
 }

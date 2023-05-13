@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlexSharp.ApiObjects
+namespace PlexSharp.ApiObjects.History
 {
    public class History
    {
-      public MediaContainerHistory? MediaContainer { get; set; }
+      public MediaContainer? MediaContainer { get; set; }
    }
 
    [Newtonsoft.Json.JsonObject(Id = "Metadata")]
-   public class MetadataHistory
+   public class Metadata
    {
       public string? HistoryKey { get; set; }
       public string? Key { get; set; }
@@ -35,9 +35,9 @@ namespace PlexSharp.ApiObjects
    }
 
    [Newtonsoft.Json.JsonObject(Id = "MediaContainer")]
-   public class MediaContainerHistory
+   public class MediaContainer
    {
       public int Size { get; set; }
-      public List<MetadataHistory>? Metadata { get; set; }
+      public List<Metadata>? Metadata { get; set; }
    }
 }

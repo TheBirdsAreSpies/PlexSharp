@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
 using Newtonsoft.Json.Linq;
 using PlexSharp.Exceptions;
 using PlexSharp.ApiObjects;
@@ -117,18 +116,18 @@ namespace PlexSharp
          }
       }
 
-      public MediaContainer CurrentlyPlaying()
+      public ApiObjects.CurrentlyPlaying.MediaContainer CurrentlyPlaying()
       {
          var responseContent = GetJsonByUrl(BaseUrl + "/status/sessions");
          JObject o = JObject.Parse(responseContent);
-         return o.SelectToken("MediaContainer")!.ToObject<MediaContainer>() ?? throw new InvalidOperationException();
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.CurrentlyPlaying.MediaContainer>() ?? throw new InvalidOperationException();
       }
 
-      public MediaContainerHistory History()
+      public ApiObjects.History.MediaContainer History()
       {
          var responseContent = GetJsonByUrl(BaseUrl + "/status/sessions/history/all");
          JObject o = JObject.Parse(responseContent);
-         return o.SelectToken("MediaContainer")!.ToObject<MediaContainerHistory>() ?? throw new InvalidOperationException();
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.History.MediaContainer>() ?? throw new InvalidOperationException();
       }
 
       #region "Internals"
