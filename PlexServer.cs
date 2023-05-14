@@ -152,7 +152,7 @@ namespace PlexSharp
 
       public DirectoryType Library(string library)
       {
-         // TODO maybe create a specific type
+         // TODO maybe create a specific type to return
          var sections = LibrarySections();
          var specificLibrary = sections?.Directory?.Find((d) => d.Title!.Equals(library, StringComparison.InvariantCultureIgnoreCase));
 
@@ -162,6 +162,24 @@ namespace PlexSharp
          }
 
          return specificLibrary;
+      }
+
+      public void SystemInformation()
+      {
+         // TODO implement
+         // returns XML instead of JSON
+         var responseContent = GetJsonByUrl(BaseUrl + "/system");
+         throw new NotImplementedException();
+      }
+
+      public void OnDeck()
+      {
+         // TODO implement
+         // pretty similar to CurrentlyPlaying
+         // use inheritance maybe
+         var responseContent = GetJsonByUrl(BaseUrl + "/library/onDeck");
+         JObject o = JObject.Parse(responseContent);
+         throw new NotImplementedException();
       }
 
       #region "Internals"
