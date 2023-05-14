@@ -5,6 +5,7 @@ using PlexSharp.ApiObjects;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using PlexSharp.ApiObjects.LibrarySections;
 
 namespace PlexSharp
 {
@@ -128,6 +129,39 @@ namespace PlexSharp
          var responseContent = GetJsonByUrl(BaseUrl + "/status/sessions/history/all");
          JObject o = JObject.Parse(responseContent);
          return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.History.MediaContainer>() ?? throw new InvalidOperationException();
+      }
+
+      public void Search(string query)
+      {
+         // TODO implement
+      }
+
+      public ApiObjects.Library.MediaContainer Library()
+      {
+         var responseContent = GetJsonByUrl(BaseUrl + "/library");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.Library.MediaContainer>() ?? throw new InvalidOperationException();
+      }
+
+      public ApiObjects.LibrarySections.MediaContainer LibrarySections()
+      {
+         var responseContent = GetJsonByUrl(BaseUrl + "/library/sections");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.LibrarySections.MediaContainer>() ?? throw new InvalidOperationException();
+      }
+
+      public DirectoryType Library(string library)
+      {
+         // TODO maybe create a specific type
+         var sections = LibrarySections();
+         var specificLibrary = sections?.Directory?.Find((d) => d.Title!.Equals(library, StringComparison.InvariantCultureIgnoreCase));
+
+         if (null == specificLibrary)
+         {
+            throw new NotFoundException("Library not found.");
+         }
+
+         return specificLibrary;
       }
 
       #region "Internals"
