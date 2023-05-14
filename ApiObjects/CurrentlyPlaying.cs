@@ -49,7 +49,12 @@ namespace PlexSharp.ApiObjects.CurrentlyPlaying
       public string? LibrarySectionKey { get; set; }
       public string? LibrarySectionTitle { get; set; }
       public string? OriginalTitle { get; set; }
-      public string? OriginallyAvailableAt { get; set; }
+      public string? originallyAvailableAt { private get; set; }
+      public DateTime? OriginallyAvailableAt {
+         get { return DateTime.Parse(originallyAvailableAt!); }
+         private set { }
+      }
+
       public string? RatingKey { get; set; }
       public string? SessionKey { get; set; }
       public string? Studio { get; set; }
