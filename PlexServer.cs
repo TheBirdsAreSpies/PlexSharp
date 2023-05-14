@@ -189,6 +189,13 @@ namespace PlexSharp
          return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.Servers.MediaContainer>() ?? throw new InvalidOperationException();
       }
 
+      public ApiObjects.Preferences.MediaContainer Preferences()
+      {
+         var responseContent = GetJsonByUrl(BaseUrl + "/:/prefs");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.Preferences.MediaContainer>() ?? throw new InvalidOperationException();
+      }
+
       #region "Internals"
       private HttpClient ClientWithHeaders()
       {
