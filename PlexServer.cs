@@ -131,9 +131,11 @@ namespace PlexSharp
          return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.History.MediaContainer>() ?? throw new InvalidOperationException();
       }
 
-      public void Search(string query)
+      public ApiObjects.MediaFile.MediaContainer Search(string query)
       {
-         // TODO implement
+         var responseContent = GetJsonByUrl(BaseUrl + $"/search?query={query}");
+         JObject o = JObject.Parse(responseContent);
+         return o.SelectToken("MediaContainer")!.ToObject<ApiObjects.MediaFile.MediaContainer>() ?? throw new InvalidOperationException();
       }
 
       public ApiObjects.Library.MediaContainer Library()
@@ -217,6 +219,7 @@ namespace PlexSharp
          GetJsonByUrl(BaseUrl + $"photo/:/transcode?url={path}&width={width}&height={height}");
          throw new NotImplementedException();
       }
+
 
       #region "Internals"
       private HttpClient ClientWithHeaders()
