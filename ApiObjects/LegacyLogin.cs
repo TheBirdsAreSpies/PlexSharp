@@ -26,7 +26,7 @@ namespace PlexSharp.ApiObjects
       [Newtonsoft.Json.JsonProperty(PropertyName = "authentication_token")]
       public string? AuthenticationToken { get; set; }
       public Subscription? Subscription { get; set; }
-      public RolesClass? Roles { get; set; }
+      public RolesType? Roles { get; set; }
       public string[]? Entitlements { get; set; }
       public DateTime ConfirmedAt { get; set; }
       public object? ForumId { get; set; }
@@ -42,7 +42,7 @@ namespace PlexSharp.ApiObjects
    }
 
    [Newtonsoft.Json.JsonObject(Id = "Roles")]
-   public class RolesClass
+   public class RolesType
    {
       public string[]? Roles { get; set; }
    }

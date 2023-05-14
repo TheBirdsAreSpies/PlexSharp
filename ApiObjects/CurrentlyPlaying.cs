@@ -75,7 +75,7 @@ namespace PlexSharp.ApiObjects.CurrentlyPlaying
       public List<Collection>? Collection { get; set; }
       public List<Director>? Director { get; set; }
       public List<Writer>? Writer { get; set; }
-      public List<RoleClass>? Role { get; set; }
+      public List<RoleType>? Role { get; set; }
       public List<Producer>? Producer { get; set; }
       public SessionUser? User { get; set; }
       public Player? Player { get; set; }
@@ -217,7 +217,7 @@ namespace PlexSharp.ApiObjects.CurrentlyPlaying
    }
 
    [Newtonsoft.Json.JsonObject(Id = "Role")]
-   public class RoleClass
+   public class RoleType
    {
       public string? Count { get; set; }
       public string? Filter { get; set; }
