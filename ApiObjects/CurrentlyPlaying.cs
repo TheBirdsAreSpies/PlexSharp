@@ -71,8 +71,8 @@ namespace PlexSharp.ApiObjects.CurrentlyPlaying
          private set { }
       }
 
-      public int viewOffset { get; set; }
-      public int year { get; set; }
+      public int ViewOffset { get; set; }
+      public int Year { get; set; }
       public List<Media>? Media { get; set; }
       public List<Genre>? Genre { get; set; }
       public List<Country>? Country { get; set; }
@@ -123,7 +123,7 @@ namespace PlexSharp.ApiObjects.CurrentlyPlaying
       public long Size { get; set; }
       public string? VideoProfile { get; set; }
       public string? Decision { get; set; }
-      public bool Sselected { get; set; }
+      public bool Selected { get; set; }
       public List<Stream>? Stream { get; set; }
    }
 
