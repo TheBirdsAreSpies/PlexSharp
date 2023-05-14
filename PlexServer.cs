@@ -203,6 +203,21 @@ namespace PlexSharp
          return o.SelectToken("MyPlex")!.ToObject<ApiObjects.PlexAccount.MyPlex>() ?? throw new InvalidOperationException();
       }
 
+      public void Agents()
+      {
+         // TODO implement
+         // returns XML instead of JSON
+         var responseContent = GetJsonByUrl(BaseUrl + "/system/agents");
+         throw new NotImplementedException();
+      }
+
+      public void PhotoTranscode(string path, int width, int height)
+      {
+         // TODO implement
+         GetJsonByUrl(BaseUrl + $"photo/:/transcode?url={path}&width={width}&height={height}");
+         throw new NotImplementedException();
+      }
+
       #region "Internals"
       private HttpClient ClientWithHeaders()
       {
